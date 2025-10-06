@@ -1,0 +1,98 @@
+/* styles/Bookings.css - Etihad Airways Inspired */
+.user-bookingsPage {
+    min-height: 100vh;
+    padding: 100px 30px 50px;
+    background: linear-gradient(135deg, rgba(189, 139, 19, 0.1), rgba(45, 45, 45, 0.1)),
+                url('https://images.unsplash.com/photo-1556388158-158ea5ccacbd?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80')
+                no-repeat center center/cover;
+    background-attachment: fixed;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.user-bookingsPage h1 {
+    color: #2d2d2d;
+    text-align: center;
+    margin-bottom: 50px;
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.user-bookings {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(420px, 1fr));
+    gap: 30px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.booking-card {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 16px;
+    padding: 30px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+    transition: all 0.4s ease;
+    border-top: 5px solid #bd8b13;
+    border-left: 3px solid #2d2d2d;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    backdrop-filter: blur(10px);
+}
+
+.booking-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+}
+
+.booking-info span {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.booking-info p {
+    margin: 8px 0;
+    color: #333333;
+    font-size: 1.05rem;
+}
+
+.booking-info b {
+    color: #2d2d2d;
+    font-weight: 600;
+}
+
+.qr-code {
+    text-align: center;
+    padding: 20px;
+    background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+    border-radius: 12px;
+    margin: 20px 0;
+    border: 2px solid #bd8b13;
+}
+
+.qr-code p {
+    margin-top: 15px;
+    font-size: 1rem;
+    color: #666666;
+    font-weight: 600;
+}
+
+.cancel-button-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+ul {
+    padding-left: 25px;
+    margin: 15px 0;
+}
+
+li {
+    margin-bottom: 8px;
+    color: #333333;
+    font-size: 1.05rem;
+}

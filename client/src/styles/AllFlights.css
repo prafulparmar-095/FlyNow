@@ -1,0 +1,73 @@
+/* styles/AllFlights.css - Etihad Airways Inspired */
+.allFlightsPage {
+    min-height: 100vh;
+    padding: 100px 30px 50px;
+    background: linear-gradient(135deg, rgba(189, 139, 19, 0.1), rgba(45, 45, 45, 0.1)),
+                url('https://images.unsplash.com/photo-1436491865332-7a61a109cc05?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80')
+                no-repeat center center/cover;
+    background-attachment: fixed;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.allFlightsPage h1 {
+    color: #2d2d2d;
+    text-align: center;
+    margin-bottom: 50px;
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.allFlights {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+    gap: 30px;
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+.allFlights-Flight {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 16px;
+    padding: 30px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+    transition: all 0.4s ease;
+    border-left: 5px solid #bd8b13;
+    border-top: 3px solid #2d2d2d;
+    backdrop-filter: blur(10px);
+}
+
+.allFlights-Flight:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+}
+
+.allFlights-Flight span {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.allFlights-Flight p {
+    margin: 8px 0;
+    color: #333333;
+    font-size: 1.05rem;
+}
+
+.allFlights-Flight b {
+    color: #2d2d2d;
+    font-weight: 600;
+}
+
+.loading-message {
+    text-align: center;
+    padding: 60px;
+    font-size: 1.3rem;
+    color: #666666;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 12px;
+    max-width: 500px;
+    margin: 0 auto;
+}

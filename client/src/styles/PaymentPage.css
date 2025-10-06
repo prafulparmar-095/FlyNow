@@ -1,0 +1,282 @@
+/* PaymentPage.css */
+
+.payment-page {
+  max-width: 500px;
+  margin: 2rem auto;
+  padding: 2.5rem;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  position: relative;
+  z-index: 1;
+}
+
+/* Background with overlay */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('https://images.unsplash.com/photo-1436491865332-7a61a109cc05?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2074&q=80');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  z-index: -1;
+}
+
+/* Optional: Add overlay for better readability */
+body::after {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(74, 108, 247, 0.1) 0%, rgba(116, 97, 238, 0.1) 100%);
+  z-index: -1;
+}
+
+.payment-page h1 {
+  text-align: center;
+  color: #2d3748;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  font-weight: 600;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.payment-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.payment-methods {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.payment-methods label {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  background: #f8fafc;
+  border: 2px solid #e2e8f0;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 500;
+  color: #4a5568;
+}
+
+.payment-methods label:hover {
+  border-color: #667eea;
+  background: #f0f4ff;
+  transform: translateY(-2px);
+}
+
+.payment-methods input[type="radio"] {
+  margin-right: 0.75rem;
+  accent-color: #667eea;
+  transform: scale(1.1);
+}
+
+.payment-methods input[type="radio"]:checked + label {
+  border-color: #667eea;
+  background: #667eea;
+  color: white;
+}
+
+/* Style for selected payment method */
+.payment-methods label:has(input[type="radio"]:checked) {
+  border-color: #667eea;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+}
+
+/* Input fields styling */
+.payment-form input[type="text"],
+.payment-form input[type="password"] {
+  width: 100%;
+  padding: 1rem 1.25rem;
+  border: 2px solid #e2e8f0;
+  border-radius: 12px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  background: #ffffff;
+  box-sizing: border-box;
+}
+
+.payment-form input[type="text"]:focus,
+.payment-form input[type="password"]:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+  transform: translateY(-1px);
+}
+
+.payment-form input[type="text"]::placeholder,
+.payment-form input[type="password"]::placeholder {
+  color: #a0aec0;
+}
+
+/* Card details grid layout */
+.payment-form div:has(input[name="expiry"]) {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  align-items: center;
+}
+
+.payment-form input[name="expiry"],
+.payment-form input[name="cvv"] {
+  text-align: center;
+}
+
+/* UPI section styling */
+.payment-form div:has(img[alt="UPI QR Code"]) {
+  text-align: center;
+  padding: 1.5rem;
+  background: #f8fafc;
+  border-radius: 16px;
+  border: 2px dashed #e2e8f0;
+}
+
+.payment-form div:has(img[alt="UPI QR Code"]) p {
+  margin-bottom: 1.5rem;
+  color: #4a5568;
+  font-weight: 500;
+}
+
+.payment-form img[alt="UPI QR Code"] {
+  width: 200px;
+  height: 200px;
+  border: 2px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 0.5rem;
+  background: white;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Netbanking section */
+.payment-form div:has(button[type="submit"]):has(p) {
+  text-align: center;
+  padding: 2rem;
+  background: #f8fafc;
+  border-radius: 16px;
+  border: 2px solid #e2e8f0;
+}
+
+.payment-form div:has(button[type="submit"]):has(p) p {
+  margin-bottom: 1.5rem;
+  color: #4a5568;
+  font-weight: 500;
+}
+
+/* Button styling */
+.payment-form button[type="submit"] {
+  padding: 1rem 2rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 1rem;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+}
+
+.payment-form button[type="submit"]:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+}
+
+.payment-form button[type="submit"]:active {
+  transform: translateY(0);
+}
+
+.payment-form button[type="submit"]:disabled {
+  background: #a0aec0;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .payment-page {
+    margin: 1rem;
+    padding: 1.5rem;
+  }
+  
+  .payment-methods {
+    grid-template-columns: 1fr;
+  }
+  
+  .payment-page h1 {
+    font-size: 1.75rem;
+  }
+  
+  .payment-form div:has(input[name="expiry"]) {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .payment-page {
+    margin: 0.5rem;
+    padding: 1rem;
+  }
+  
+  .payment-page h1 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .payment-form input[type="text"],
+  .payment-form input[type="password"] {
+    padding: 0.875rem 1rem;
+  }
+}
+
+/* Loading state animation */
+@keyframes pulse {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.payment-form button[type="submit"]:disabled {
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+/* Success state (for future use) */
+.payment-success {
+  border-color: #48bb78 !important;
+  background: #f0fff4 !important;
+}
+
+/* Error state (for future use) */
+.payment-error {
+  border-color: #f56565 !important;
+  background: #fff5f5 !important;
+}

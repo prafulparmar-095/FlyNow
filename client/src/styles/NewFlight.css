@@ -1,0 +1,67 @@
+/* styles/NewFlight.css - Etihad Airways Inspired */
+.newFlightPage {
+    min-height: 100vh;
+    padding: 100px 30px 50px;
+    background: linear-gradient(135deg, rgba(189, 139, 19, 0.1), rgba(45, 45, 45, 0.1)),
+                url('https://images.unsplash.com/photo-1436491865332-7a61a109cc05?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80')
+                no-repeat center center/cover;
+    background-attachment: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.newFlight-card {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    padding: 50px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 800px;
+    border: 2px solid #bd8b13;
+    backdrop-filter: blur(15px);
+}
+
+.newFlight-card h1 {
+    color: #2d2d2d;
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2.3rem;
+    font-weight: 700;
+}
+
+.newFlightSpan1,
+.newFlightSpan2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+    margin-bottom: 25px;
+}
+
+.form-floating {
+    margin-bottom: 25px;
+}
+
+.form-control, .form-select {
+    border: 2px solid #e9ecef;
+    border-radius: 10px;
+    padding: 15px 20px;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    width: 100%;
+    font-family: 'Segoe UI', sans-serif;
+    background: rgba(255, 255, 255, 0.9);
+}
+
+.form-control:focus, .form-select:focus {
+    border-color: #2d2d2d;
+    box-shadow: 0 0 0 3px rgba(45, 45, 45, 0.2);
+    outline: none;
+    transform: translateY(-2px);
+}
+
+.form-control:disabled {
+    background-color: #f8f9fa;
+    color: #666666;
+}
